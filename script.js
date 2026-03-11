@@ -1,6 +1,17 @@
 // ===== script.js =====
 // كود بسيط ونظيف للتنقل
+// في بداية الملف، تأكد من تحميل data.json
+let philosophyData = null;
 
+fetch('./data.json')
+    .then(response => response.json())
+    .then(data => {
+        philosophyData = data;
+        renderModules(); // دالة عرض المحتوى
+    })
+    .catch(error => {
+        console.log('خطأ في تحميل البيانات:', error);
+    });
 (function() {
     // عناصر DOM
     const contentDiv = document.getElementById('contentArea');
