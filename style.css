@@ -1,0 +1,645 @@
+/* ===== styles.css ===== */
+/* تصميم متجاوب بالكامل - يعمل بشكل مثالي على الحاسوب والهاتف */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Cairo:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Cairo', sans-serif;
+    background: #e1eaf2;  /* خلفية زرقاء فاتحة */
+    color: #1e2f4a;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 0;
+}
+
+/* الحاوية الرئيسية */
+.app-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    background: #f2f7fd;
+    min-height: 100vh;
+    padding: 25px;
+}
+
+/* ===== الهيدر ===== */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    background: #dde9f5;
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: 1px solid #bcd3e8;
+}
+
+.header i {
+    font-size: 1.8rem;
+    color: #245b8c;
+    background: #c6daf0;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1e2f4a;
+    flex: 1;
+}
+
+.home-btn {
+    background: #c6daf0;
+    border: 1px solid #9fbad4;
+    padding: 8px 20px;
+    border-radius: 40px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1e2f4a;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.home-btn i {
+    font-size: 1rem;
+    background: none;
+    padding: 0;
+    color: #1e2f4a;
+}
+
+.home-btn:hover {
+    background: #b3ceec;
+}
+
+/* ===== المجزوءات (شبكة للهاتف) ===== */
+.modules-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.module-card {
+    background: #e9f1fa;
+    border: 1px solid #b9d1e9;
+    border-radius: 28px;
+    padding: 22px;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 40, 80, 0.04);
+}
+
+.module-card:hover {
+    border-color: #88b2da;
+    background: #deecfb;
+}
+
+.module-icon {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+}
+
+.module-title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #1e2f4a;
+    margin-bottom: 6px;
+}
+
+.module-sub {
+    color: #3e5f82;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ألوان المجزوءات */
+.module-card[data-module="0"] .module-icon i { color: #2b6a9e; }
+.module-card[data-module="1"] .module-icon i { color: #2d7a5a; }
+.module-card[data-module="2"] .module-icon i { color: #b4654a; }
+.module-card[data-module="3"] .module-icon i { color: #735e9e; }
+
+/* ===== قائمة المفاهيم ===== */
+.concepts-list {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 2px solid #bcd3e8;
+    display: none;
+}
+
+.concepts-list.show {
+    display: block;
+}
+
+.concept-item {
+    background: #e9f1fa;
+    border: 1px solid #b9d1e9;
+    border-radius: 22px;
+    padding: 16px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.concept-item:hover {
+    background: #deecfb;
+    border-color: #88b2da;
+}
+
+.concept-item i {
+    font-size: 1.6rem;
+    color: #2b6a9e;
+    width: 35px;
+}
+
+.concept-item span {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #1e2f4a;
+    flex: 1;
+}
+
+.hint {
+    color: #3e5f82;
+    font-size: 0.9rem;
+    background: #c6daf0;
+    padding: 3px 12px;
+    border-radius: 30px;
+    border: 1px solid #9fbad4;
+}
+
+/* ===== رأس المحاور ===== */
+.axes-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    background: #dde9f5;
+    padding: 15px 20px;
+    border-radius: 50px;
+    border: 1px solid #bcd3e8;
+}
+
+.axes-header i {
+    font-size: 1.8rem;
+    color: #2b6a9e;
+    background: #c6daf0;
+    padding: 12px;
+    border-radius: 50%;
+}
+
+.axes-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e2f4a;
+}
+
+/* ===== قائمة المحاور ===== */
+.axes-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.axis-card {
+    background: #e9f1fa;
+    border: 1px solid #b9d1e9;
+    border-radius: 28px;
+    padding: 22px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.axis-card:hover {
+    background: #deecfb;
+    border-color: #88b2da;
+}
+
+.axis-card i {
+    font-size: 1.8rem;
+    color: #b4654a;
+    margin-bottom: 12px;
+}
+
+.axis-card h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #1e2f4a;
+}
+
+/* ===== شريط التنقل ===== */
+.breadcrumb {
+    background: #dde9f5;
+    padding: 14px 18px;
+    border-radius: 40px;
+    margin-bottom: 25px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    border: 1px solid #bcd3e8;
+}
+
+.breadcrumb i {
+    color: #5b7d9e;
+    font-size: 0.9rem;
+}
+
+.breadcrumb .clickable {
+    cursor: pointer;
+    color: #1e2f4a;
+    font-weight: 500;
+    padding: 5px 14px;
+    border-radius: 30px;
+    background: #c6daf0;
+    border: 1px solid #9fbad4;
+    transition: all 0.2s;
+}
+
+.breadcrumb .clickable:hover {
+    background: #b3ceec;
+}
+
+.breadcrumb span:last-child {
+    color: #1e2f4a;
+    font-weight: 600;
+    background: #c6daf0;
+    padding: 5px 14px;
+    border-radius: 30px;
+}
+
+/* ===== صندوق الإشكال ===== */
+.problem-box {
+    background: #dde9f5;
+    border-left: 5px solid #2b6a9e;
+    padding: 22px;
+    border-radius: 24px;
+    margin-bottom: 25px;
+}
+
+.problem-box h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #1e2f4a;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.problem-box h3 i {
+    color: #2b6a9e;
+}
+
+.problem-text {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #1e2f4a;
+    line-height: 1.5;
+}
+
+/* ===== قسم المفاهيم ===== */
+.concepts-defs {
+    background: #dde9f5;
+    border: 1px solid #bcd3e8;
+    border-radius: 24px;
+    padding: 22px;
+    margin-bottom: 25px;
+}
+
+.concepts-defs h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1e2f4a;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.concepts-defs h3 i {
+    color: #2b6a9e;
+}
+
+.def-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.def-item {
+    background: #e9f1fa;
+    border: 1px solid #b9d1e9;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.def-item:hover {
+    background: #deecfb;
+    border-color: #88b2da;
+}
+
+.def-term {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1e2f4a;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #bcd3e8;
+    padding-bottom: 10px;
+}
+
+.def-term i {
+    color: #2b6a9e;
+}
+
+.def-desc {
+    font-size: 1.05rem;
+    color: #2c4b70;
+    line-height: 1.6;
+}
+
+/* ===== قسم الأطروحات ===== */
+.theses-box {
+    background: #dde9f5;
+    border: 1px solid #bcd3e8;
+    border-radius: 24px;
+    padding: 22px;
+}
+
+.theses-box h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1e2f4a;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.theses-box h3 i {
+    color: #b4654a;
+}
+
+.thesis-card {
+    background: #e9f1fa;
+    border: 1px solid #b9d1e9;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-right: 4px solid #b4654a;
+}
+
+.thesis-card:hover {
+    background: #deecfb;
+    border-color: #88b2da;
+}
+
+.thesis-philosopher {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #9b5a3a;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.thesis-philosopher i {
+    color: #b4654a;
+}
+
+.thesis-text {
+    font-size: 1.05rem;
+    color: #2c4b70;
+    line-height: 1.6;
+    padding-right: 12px;
+}
+
+/* ===== تحسينات للحاسوب (شاشات كبيرة) ===== */
+@media (min-width: 768px) {
+    .app-container {
+        padding: 35px;
+    }
+
+    .modules-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .module-card {
+        padding: 28px;
+    }
+
+    .module-title {
+        font-size: 1.9rem;
+    }
+
+    .axes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .axis-card {
+        padding: 26px;
+    }
+
+    .axis-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .def-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .problem-text {
+        font-size: 1.6rem;
+    }
+
+    .concept-item {
+        padding: 18px;
+    }
+
+    .concept-item span {
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .app-container {
+        padding: 40px;
+    }
+
+    .modules-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .module-card {
+        padding: 30px 25px;
+    }
+
+    .module-title {
+        font-size: 1.8rem;
+    }
+
+    .axes-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .def-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .breadcrumb {
+        padding: 16px 25px;
+        font-size: 1.1rem;
+    }
+}
+
+/* ===== تحسينات إضافية للهاتف الصغير ===== */
+@media (max-width: 480px) {
+    .app-container {
+        padding: 15px;
+    }
+
+    .header {
+        padding: 10px 15px;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .home-btn {
+        padding: 6px 14px;
+        font-size: 0.9rem;
+    }
+
+    .module-card {
+        padding: 18px;
+    }
+
+    .module-title {
+        font-size: 1.5rem;
+    }
+
+    .concept-item {
+        padding: 14px;
+    }
+
+    .concept-item i {
+        font-size: 1.4rem;
+        width: 30px;
+    }
+
+    .concept-item span {
+        font-size: 1.1rem;
+    }
+
+    .hint {
+        font-size: 0.8rem;
+        padding: 2px 10px;
+    }
+
+    .axes-header {
+        padding: 12px 15px;
+    }
+
+    .axes-header i {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    .axes-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .axis-card {
+        padding: 18px;
+    }
+
+    .axis-card i {
+        font-size: 1.6rem;
+    }
+
+    .axis-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .breadcrumb {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+
+    .breadcrumb .clickable {
+        padding: 4px 10px;
+    }
+
+    .problem-box {
+        padding: 18px;
+    }
+
+    .problem-text {
+        font-size: 1.2rem;
+    }
+
+    .def-item {
+        padding: 16px;
+    }
+
+    .def-term {
+        font-size: 1.2rem;
+    }
+
+    .def-desc {
+        font-size: 0.95rem;
+    }
+
+    .thesis-card {
+        padding: 16px;
+    }
+
+    .thesis-philosopher {
+        font-size: 1.1rem;
+    }
+
+    .thesis-text {
+        font-size: 0.95rem;
+    }
+}
+
+/* ===== رسائل الحالة ===== */
+.loading, .error {
+    text-align: center;
+    padding: 40px 20px;
+    color: #3e5f82;
+    font-size: 1.2rem;
+    background: #dde9f5;
+    border-radius: 24px;
+    border: 1px solid #bcd3e8;
+}
+
+.loading i {
+    color: #2b6a9e;
+    margin-left: 8px;
+}
